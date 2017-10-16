@@ -3,7 +3,7 @@
 
     "content_scripts": [
         {
-            "js": [ "lib/jq/jquery-2.1.1.min.js", "lib/ga/ga.js", "porgify/porgify.js" ],
+            "js": [ "lib/jq/jquery-2.1.1.min.js", "https://www.google-analytics.com/analytics.js", "porgify/porgify.js" ],
             "matches": [ "http://*/*", "https://*/*" ],
             "run_at": "document_start",
             "all_frames":  false
@@ -40,5 +40,5 @@
         "chrome_style": true
     }
 
-
+    "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'"
 }
