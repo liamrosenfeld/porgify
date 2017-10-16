@@ -1,0 +1,41 @@
+﻿{
+    "appName": {
+        "message": "Porgify",
+        "description": "The title of the application, displayed in the web store."
+    },
+    "appDesc": {
+        "message": "Replaces all images on all pages to Porg.",
+        "description": "The description of the application, displayed in the web store."
+    },
+    "optionsHeader": {
+        "message": "Porgify Options",
+        "description": "Title of Options page"
+    },
+    "optionsPageActivate": {
+        "message": "Porgify is",
+        "description": "Text shown next to On/Off-button"
+    },
+    "optionsPageContextLink": {
+        "message": "Show \"Porgify Inactivate\" on right-click",
+        "description": "Text shown next to On/Off-button"
+    },
+    "optionsPageContextLinkActivate": {
+        "message": "Show \"Porgify Activate\" on right-click",
+        "description": "Text shown next to On/Off-button"
+    },
+
+    "contextMenuInactivate": {
+        "message": "Porgify Inactivate",
+        "description": "The option in context menu to inactivate the extension"
+    },
+    "contextMenuActivate": {
+        "message": "Porgify Activate",
+        "description": "The option in context menu to activate the extension"
+    },
+    "openOptionsInfo": {
+        "message": "Open options again by using right-click or by clicking porgify 'Options' under ",
+        "description": "The option in context menu to activate the extension"
+    }
+
+
+}
