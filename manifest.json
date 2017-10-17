@@ -39,6 +39,4 @@
         "page": "porgify/options/options.html",
         "chrome_style": true
     }
-
-    "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'"
 }
