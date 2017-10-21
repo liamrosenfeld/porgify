@@ -1,7 +1,7 @@
 ﻿//porgify background script
 (() => {
 
-    var self = {
+    let self = {
         //Get saved setting and initialize GUI items
         init() {
             chrome.storage.sync.get({
@@ -33,7 +33,7 @@
             else if (message.type === "extensions") {
                 self.openExtensions();
             }
-            if(typeof (sendResponse) == "function")
+            if(typeof (sendResponse) === "function")
                 sendResponse();
         },
 
@@ -57,7 +57,7 @@
                     "id": "porgifyInactivate",
                     "title": chrome.i18n.getMessage("contextMenuActivate"),
                     "contexts": ["page"],
-                    "onclick": function (e) {
+                    "onclick"(e) {
                         self.openOptions();
                     }
                 });
@@ -66,8 +66,8 @@
 
         //Opens the options tab
         openOptions() {
-            var optionsUrl = chrome.extension.getURL('porgify/options/options.html');
-            self.openUrl(optionsUrl);
+          let optionsUrl = chrome.extension.getURL('porgify/options/options.html');
+          self.openUrl(optionsUrl);
 
         },
 

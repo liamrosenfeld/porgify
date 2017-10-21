@@ -1,14 +1,14 @@
 ﻿(function() {
-  self = {
+  let self = {
     //Bind events
     init() {
       //Header
       document.title = chrome.i18n.getMessage("optionsHeader");
 
       //Lang
-      var langs = ["optionsPageActivate", "optionsPageContextLink", "optionsPageContextLinkActivate"];
-      for (var i = 0; i < langs.length; i++) {
-        var message = chrome.i18n.getMessage(langs[i]);
+      let langs = ["optionsPageActivate", "optionsPageContextLink", "optionsPageContextLinkActivate"];
+      for (let i = 0; i < langs.length; i++) {
+        let message = chrome.i18n.getMessage(langs[i]);
         document.getElementById(langs[i]).textContent = message;
       }
 
@@ -19,11 +19,11 @@
       document.getElementById("chkUseContextMenuActivate").addEventListener("change", self.saveOptions);
 
       //Options info ([LINK] not in use)
-      var optionsInfo = chrome.i18n.getMessage("openOptionsInfo").replace("[LINK]", "chrome://extensions/");
+      let optionsInfo = chrome.i18n.getMessage('openOptionsInfo').replace('[LINK]', 'chrome://extensions/');
       document.getElementById("optionsPage").innerHTML = optionsInfo;
 
       //Link
-      var extensionsLink = document.getElementById("extensionsLink");
+      let extensionsLink = document.getElementById('extensionsLink');
       //extensionsLink.addEventListener("click", self.linkExtensions);
       extensionsLink.textContent = "chrome://extensions/";
 
@@ -32,10 +32,10 @@
     },
     //Save to storage
     saveOptions() {
-      var activate = document.getElementById("chkActivate").checked;
-      var contextmenu = document.getElementById("chkUseContextMenu").checked;
-      var contextmenuActivate = document.getElementById("chkUseContextMenuActivate").checked;
-      var items = {
+      let activate = document.getElementById('chkActivate').checked;
+      let contextmenu = document.getElementById('chkUseContextMenu').checked;
+      let contextmenuActivate = document.getElementById('chkUseContextMenuActivate').checked;
+      let items = {
         activate,
         contextmenu,
         contextmenuActivate
@@ -50,7 +50,7 @@
         type: "options",
         items
       }, function(response) {
-        var a = "";
+        let a = '';
       });
     },
     //Load from storage
@@ -68,7 +68,7 @@
     },
     //Update page with status
     setStatus(active) {
-      var url;
+      let url;
       if (active) {
         url = chrome.extension.getURL("porgify/options/on.jpg");
       } else {
@@ -82,11 +82,11 @@
       chrome.runtime.sendMessage({
         type: "extensions"
       }, function(response) {
-        var a = "";
+        let a = '';
       });
     },
     togglePrivacyTerms() {
-      var holder = document.getElementById("termsHolder");
+      let holder = document.getElementById('termsHolder');
       if (holder.style.display === "none")
         holder.style.display = "";
       else
