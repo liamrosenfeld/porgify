@@ -1,14 +1,14 @@
-﻿(function() {
-  self = {
+﻿(() => {
+  let self = {
     //Bind events
     init() {
       //Header
       document.title = chrome.i18n.getMessage("optionsHeader");
 
       //Lang
-      var langs = ["optionsPageActivate", "optionsPageContextLink", "optionsPageContextLinkActivate"];
-      for (var i = 0; i < langs.length; i++) {
-        var message = chrome.i18n.getMessage(langs[i]);
+      let langs = ["optionsPageActivate", "optionsPageContextLink", "optionsPageContextLinkActivate"];
+      for (let i = 0; i < langs.length; i++) {
+        let message = chrome.i18n.getMessage(langs[i]);
         document.getElementById(langs[i]).textContent = message;
       }
 
@@ -19,11 +19,11 @@
       document.getElementById("chkUseContextMenuActivate").addEventListener("change", self.saveOptions);
 
       //Options info ([LINK] not in use)
-      var optionsInfo = chrome.i18n.getMessage("openOptionsInfo").replace("[LINK]", "chrome://extensions/");
+      let optionsInfo = chrome.i18n.getMessage("openOptionsInfo").replace("[LINK]", "chrome://extensions/");
       document.getElementById("optionsPage").innerHTML = optionsInfo;
 
       //Link
-      var extensionsLink = document.getElementById("extensionsLink");
+      let extensionsLink = document.getElementById("extensionsLink");
       //extensionsLink.addEventListener("click", self.linkExtensions);
       extensionsLink.textContent = "chrome://extensions/";
 
@@ -50,7 +50,7 @@
         type: "options",
         items
       }, function(response) {
-        var a = "";
+        let a = "";
       });
     },
     //Load from storage
@@ -82,7 +82,7 @@
       chrome.runtime.sendMessage({
         type: "extensions"
       }, function(response) {
-        var a = "";
+        let a = "";
       });
     },
     togglePrivacyTerms() {

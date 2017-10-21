@@ -1,7 +1,7 @@
 ﻿//porgify background script
-(function() {
+(() => {
 
-    var self = {
+    let self = {
         //Get saved setting and initialize GUI items
         init() {
             chrome.storage.sync.get({
@@ -33,7 +33,7 @@
             else if (message.type === "extensions") {
                 self.openExtensions();
             }
-            if(typeof (sendResponse) == "function")
+            if(typeof (sendResponse) === "function")
                 sendResponse();
         },
 
@@ -48,7 +48,7 @@
                     "id": "porgifyInactivate",
                     "title": chrome.i18n.getMessage("contextMenuInactivate"),
                     "contexts": ["page"],
-                    "onclick": (e) => {
+                    "onclick"(e) {
                         self.openOptions();
                     }
                 });
@@ -57,7 +57,7 @@
                     "id": "porgifyInactivate",
                     "title": chrome.i18n.getMessage("contextMenuActivate"),
                     "contexts": ["page"],
-                    "onclick": (e) => {
+                    "onclick"(e) {
                         self.openOptions();
                     }
                 });

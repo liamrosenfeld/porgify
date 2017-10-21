@@ -1,4 +1,4 @@
-var active = true;
+let active = true;
 
 try {
   chrome.storage.sync.get({
@@ -20,7 +20,6 @@ function main() {
 
   //porgify
   (function($) {
-
     var self = {
       porgifyImgs: [
         "http://www.altpress.com/images/uploads/news/News/porgheader.jpeg",
