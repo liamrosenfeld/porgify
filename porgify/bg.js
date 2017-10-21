@@ -1,9 +1,9 @@
 ﻿//porgify background script
-(function() {
+(() => {
 
-    var self = {
+    let self = {
         //Get saved setting and initialize GUI items
-        init: function() {
+        init() {
             chrome.storage.sync.get({
                 activate: true,
                 contextmenu: true,
@@ -17,14 +17,14 @@
         },
 
         //On first install
-        onInstalled: function (details) {
+        onInstalled(details) {
             if (details.reason === "install") {
                 self.openOptions();
             }
         },
 
         //On message received
-        onMessageReceived: function(message, sender, sendResponse) {
+        onMessageReceived(message, sender, sendResponse) {
 
             //Option page saved
             if (message.type === "options") {
@@ -33,12 +33,12 @@
             else if (message.type === "extensions") {
                 self.openExtensions();
             }
-            if(typeof (sendResponse) == "function")
+            if(typeof (sendResponse) === "function")
                 sendResponse();
         },
 
         //Update GUI
-        updateContextMenu: function (items) {
+        updateContextMenu(items) {
 
             chrome.contextMenus.remove("porgifyInactivate");
             chrome.contextMenus.remove("porgifyInactivate");
@@ -48,7 +48,7 @@
                     "id": "porgifyInactivate",
                     "title": chrome.i18n.getMessage("contextMenuInactivate"),
                     "contexts": ["page"],
-                    "onclick": function(e) {
+                    "onclick"(e) {
                         self.openOptions();
                     }
                 });
@@ -57,7 +57,7 @@
                     "id": "porgifyInactivate",
                     "title": chrome.i18n.getMessage("contextMenuActivate"),
                     "contexts": ["page"],
-                    "onclick": function (e) {
+                    "onclick"(e) {
                         self.openOptions();
                     }
                 });
@@ -65,19 +65,19 @@
         },
 
         //Opens the options tab
-        openOptions:function(){
-            var optionsUrl = chrome.extension.getURL('porgify/options/options.html');
-            self.openUrl(optionsUrl);
+        openOptions() {
+          let optionsUrl = chrome.extension.getURL("porgify/options/options.html");
+          self.openUrl(optionsUrl);
 
         },
 
-        openUrl: function(url) {
-            chrome.tabs.query({ url: url }, function (tabs) {
+        openUrl(url) {
+            chrome.tabs.query({ url }, function (tabs) {
                 if (tabs.length) {
                     chrome.tabs.update(tabs[0].id, { active: true });
                     chrome.windows.update(tabs[0].windowId, { focused: true });
                 } else {
-                    chrome.tabs.create({ url: url });
+                    chrome.tabs.create({ url });
                 }
             });
         }

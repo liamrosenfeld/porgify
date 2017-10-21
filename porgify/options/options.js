@@ -1,14 +1,14 @@
-﻿(function() {
-  self = {
+﻿(() => {
+  let self = {
     //Bind events
-    init: function() {
+    init() {
       //Header
       document.title = chrome.i18n.getMessage("optionsHeader");
 
       //Lang
-      var langs = ["optionsPageActivate", "optionsPageContextLink", "optionsPageContextLinkActivate"];
-      for (var i = 0; i < langs.length; i++) {
-        var message = chrome.i18n.getMessage(langs[i]);
+      let langs = ["optionsPageActivate", "optionsPageContextLink", "optionsPageContextLinkActivate"];
+      for (let i = 0; i < langs.length; i++) {
+        let message = chrome.i18n.getMessage(langs[i]);
         document.getElementById(langs[i]).textContent = message;
       }
 
@@ -19,11 +19,11 @@
       document.getElementById("chkUseContextMenuActivate").addEventListener("change", self.saveOptions);
 
       //Options info ([LINK] not in use)
-      var optionsInfo = chrome.i18n.getMessage("openOptionsInfo").replace("[LINK]", "chrome://extensions/");
+      let optionsInfo = chrome.i18n.getMessage("openOptionsInfo").replace("[LINK]", "chrome://extensions/");
       document.getElementById("optionsPage").innerHTML = optionsInfo;
 
       //Link
-      var extensionsLink = document.getElementById("extensionsLink");
+      let extensionsLink = document.getElementById("extensionsLink");
       //extensionsLink.addEventListener("click", self.linkExtensions);
       extensionsLink.textContent = "chrome://extensions/";
 
@@ -31,14 +31,14 @@
       document.getElementById("termsToggle").addEventListener("click", self.togglePrivacyTerms);
     },
     //Save to storage
-    saveOptions: function() {
-      var activate = document.getElementById("chkActivate").checked;
-      var contextmenu = document.getElementById("chkUseContextMenu").checked;
-      var contextmenuActivate = document.getElementById("chkUseContextMenuActivate").checked;
-      var items = {
-        activate: activate,
-        contextmenu: contextmenu,
-        contextmenuActivate: contextmenuActivate
+    saveOptions() {
+      let activate = document.getElementById("chkActivate").checked;
+      let contextmenu = document.getElementById("chkUseContextMenu").checked;
+      let contextmenuActivate = document.getElementById("chkUseContextMenuActivate").checked;
+      let items = {
+        activate,
+        contextmenu,
+        contextmenuActivate
       };
       chrome.storage.sync.set(items, function() {
         self.setStatus(activate);
@@ -48,13 +48,13 @@
       //Notify bg.js
       chrome.runtime.sendMessage({
         type: "options",
-        items: items
+        items
       }, function(response) {
-        var a = "";
+        let a = "";
       });
     },
     //Load from storage
-    restoreOptions: function() {
+    restoreOptions() {
       chrome.storage.sync.get({
         activate: true,
         contextmenu: true,
@@ -67,8 +67,8 @@
       });
     },
     //Update page with status
-    setStatus: function(active) {
-      var url;
+    setStatus(active) {
+      let url;
       if (active) {
         url = chrome.extension.getURL("porgify/options/on.jpg");
       } else {
@@ -78,15 +78,15 @@
       document.getElementById("imgStatus").src = url;
     },
     //Open extensions page (not working, not in use)
-    linkExtensions: function() {
+    linkExtensions() {
       chrome.runtime.sendMessage({
         type: "extensions"
       }, function(response) {
-        var a = "";
+        let a = "";
       });
     },
-    togglePrivacyTerms: function() {
-      var holder = document.getElementById("termsHolder");
+    togglePrivacyTerms() {
+      let holder = document.getElementById("termsHolder");
       if (holder.style.display === "none")
         holder.style.display = "";
       else
