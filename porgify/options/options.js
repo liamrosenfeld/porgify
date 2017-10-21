@@ -1,7 +1,7 @@
 ﻿(function() {
   self = {
     //Bind events
-    init: function() {
+    init() {
       //Header
       document.title = chrome.i18n.getMessage("optionsHeader");
 
@@ -31,14 +31,14 @@
       document.getElementById("termsToggle").addEventListener("click", self.togglePrivacyTerms);
     },
     //Save to storage
-    saveOptions: function() {
+    saveOptions() {
       var activate = document.getElementById("chkActivate").checked;
       var contextmenu = document.getElementById("chkUseContextMenu").checked;
       var contextmenuActivate = document.getElementById("chkUseContextMenuActivate").checked;
       var items = {
-        activate: activate,
-        contextmenu: contextmenu,
-        contextmenuActivate: contextmenuActivate
+        activate,
+        contextmenu,
+        contextmenuActivate
       };
       chrome.storage.sync.set(items, function() {
         self.setStatus(activate);
@@ -48,13 +48,13 @@
       //Notify bg.js
       chrome.runtime.sendMessage({
         type: "options",
-        items: items
+        items
       }, function(response) {
         var a = "";
       });
     },
     //Load from storage
-    restoreOptions: function() {
+    restoreOptions() {
       chrome.storage.sync.get({
         activate: true,
         contextmenu: true,
@@ -67,7 +67,7 @@
       });
     },
     //Update page with status
-    setStatus: function(active) {
+    setStatus(active) {
       var url;
       if (active) {
         url = chrome.extension.getURL("porgify/options/on.jpg");
@@ -78,14 +78,14 @@
       document.getElementById("imgStatus").src = url;
     },
     //Open extensions page (not working, not in use)
-    linkExtensions: function() {
+    linkExtensions() {
       chrome.runtime.sendMessage({
         type: "extensions"
       }, function(response) {
         var a = "";
       });
     },
-    togglePrivacyTerms: function() {
+    togglePrivacyTerms() {
       var holder = document.getElementById("termsHolder");
       if (holder.style.display === "none")
         holder.style.display = "";

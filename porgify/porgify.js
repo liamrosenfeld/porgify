@@ -34,7 +34,7 @@ function main() {
       ],
 
       //Handles all images on page with an interval of time
-      handleImages: function(lstImgs, time) {
+      handleImages(lstImgs, time) {
         $.each($("img"), function(i, item) {
           //Skip if image is already replaced
           if ($.inArray($(item).attr("src"), lstImgs) === -1) {
@@ -65,7 +65,7 @@ function main() {
         }
       },
       //Replace one image
-      handleImg: function(item, lstImgs) {
+      handleImg(item, lstImgs) {
         $(item).error(function() {
           //Handle broken imgs
           self.handleBrokenImg(item, lstImgs);
@@ -74,14 +74,14 @@ function main() {
         self.setRandomImg(item, lstImgs);
       },
       //Set a random image from lstImgs to item
-      setRandomImg: function(item, lstImgs) {
+      setRandomImg(item, lstImgs) {
         var h = $(item).height();
         var w = $(item).width();
         $(item).css("width", w + "px").css("height", h + "px");
         $(item).attr("src", lstImgs[Math.floor(Math.random() * lstImgs.length)]);
       },
       //Removed broken image from lstImgs, run handleImg on item
-      handleBrokenImg: function(item, lstImgs) {
+      handleBrokenImg(item, lstImgs) {
 
         var brokenImg = $(item).attr("src");
         var index = lstImgs.indexOf(brokenImg);
