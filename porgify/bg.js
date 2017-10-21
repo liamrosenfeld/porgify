@@ -18,7 +18,7 @@
 
         //On first install
         onInstalled: function (details) {
-            if (details.reason == "install") {
+            if (details.reason === "install") {
                 self.openOptions();
             }
         },
@@ -27,10 +27,10 @@
         onMessageReceived: function(message, sender, sendResponse) {
 
             //Option page saved
-            if (message.type == "options") {
+            if (message.type === "options") {
                 self.updateContextMenu(message.items);
             }
-            else if (message.type == "extensions") {
+            else if (message.type === "extensions") {
                 self.openExtensions();
             }
             if(typeof (sendResponse) == "function")

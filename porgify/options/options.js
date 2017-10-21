@@ -87,7 +87,7 @@
     },
     togglePrivacyTerms: function() {
       var holder = document.getElementById('termsHolder');
-      if (holder.style.display == "none")
+      if (holder.style.display === "none")
         holder.style.display = "";
       else
         holder.style.display = "none";

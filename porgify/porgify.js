@@ -39,7 +39,7 @@ function main() {
       handleImages: function(lstImgs, time) {
         $.each($('img'), function(i, item) {
           //Skip if image is already replaced
-          if ($.inArray($(item).attr('src'), lstImgs) == -1) {
+          if ($.inArray($(item).attr('src'), lstImgs) === -1) {
             var h = $(item).height();
             var w = $(item).width();
 
