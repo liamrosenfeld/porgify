@@ -1,4 +1,4 @@
-﻿(function() {
+﻿(() => {
   let self = {
     //Bind events
     init() {
@@ -19,11 +19,11 @@
       document.getElementById("chkUseContextMenuActivate").addEventListener("change", self.saveOptions);
 
       //Options info ([LINK] not in use)
-      let optionsInfo = chrome.i18n.getMessage('openOptionsInfo').replace('[LINK]', 'chrome://extensions/');
+      let optionsInfo = chrome.i18n.getMessage("openOptionsInfo").replace("[LINK]", "chrome://extensions/");
       document.getElementById("optionsPage").innerHTML = optionsInfo;
 
       //Link
-      let extensionsLink = document.getElementById('extensionsLink');
+      let extensionsLink = document.getElementById("extensionsLink");
       //extensionsLink.addEventListener("click", self.linkExtensions);
       extensionsLink.textContent = "chrome://extensions/";
 
@@ -32,9 +32,9 @@
     },
     //Save to storage
     saveOptions() {
-      let activate = document.getElementById('chkActivate').checked;
-      let contextmenu = document.getElementById('chkUseContextMenu').checked;
-      let contextmenuActivate = document.getElementById('chkUseContextMenuActivate').checked;
+      let activate = document.getElementById("chkActivate").checked;
+      let contextmenu = document.getElementById("chkUseContextMenu").checked;
+      let contextmenuActivate = document.getElementById("chkUseContextMenuActivate").checked;
       let items = {
         activate,
         contextmenu,
@@ -50,7 +50,7 @@
         type: "options",
         items
       }, function(response) {
-        let a = '';
+        let a = "";
       });
     },
     //Load from storage
@@ -82,11 +82,11 @@
       chrome.runtime.sendMessage({
         type: "extensions"
       }, function(response) {
-        let a = '';
+        let a = "";
       });
     },
     togglePrivacyTerms() {
-      let holder = document.getElementById('termsHolder');
+      let holder = document.getElementById("termsHolder");
       if (holder.style.display === "none")
         holder.style.display = "";
       else
