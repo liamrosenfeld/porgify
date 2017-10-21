@@ -48,9 +48,6 @@
       //Notify bg.js
       chrome.runtime.sendMessage({
         type: "options",
-        items
-      }, function(response) {
-        let a = "";
       });
     },
     //Load from storage
@@ -81,8 +78,6 @@
     linkExtensions() {
       chrome.runtime.sendMessage({
         type: "extensions"
-      }, function(response) {
-        let a = "";
       });
     },
     togglePrivacyTerms() {
