@@ -32,10 +32,10 @@
     },
     //Save to storage
     saveOptions() {
-      let activate = document.getElementById("chkActivate").checked;
-      let contextmenu = document.getElementById("chkUseContextMenu").checked;
-      let contextmenuActivate = document.getElementById("chkUseContextMenuActivate").checked;
-      let items = {
+      var activate = document.getElementById("chkActivate").checked;
+      var contextmenu = document.getElementById("chkUseContextMenu").checked;
+      var contextmenuActivate = document.getElementById("chkUseContextMenuActivate").checked;
+      var items = {
         activate,
         contextmenu,
         contextmenuActivate
@@ -68,7 +68,7 @@
     },
     //Update page with status
     setStatus(active) {
-      let url;
+      var url;
       if (active) {
         url = chrome.extension.getURL("porgify/options/on.jpg");
       } else {
@@ -86,7 +86,7 @@
       });
     },
     togglePrivacyTerms() {
-      let holder = document.getElementById("termsHolder");
+      var holder = document.getElementById("termsHolder");
       if (holder.style.display === "none")
         holder.style.display = "";
       else

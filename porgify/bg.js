@@ -65,9 +65,9 @@
         },
 
         //Opens the options tab
-        openOptions() {
-          let optionsUrl = chrome.extension.getURL("porgify/options/options.html");
-          self.openUrl(optionsUrl);
+        openOptions(){
+            var optionsUrl = chrome.extension.getURL('porgify/options/options.html');
+            self.openUrl(optionsUrl);
 
         },
 
