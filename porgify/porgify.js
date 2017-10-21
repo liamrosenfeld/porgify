@@ -34,7 +34,7 @@ function main() {
       ],
 
       //Handles all images on page with an interval of time
-      handleImages: function(lstImgs, time) {
+      handleImages(lstImgs, time) {
         $.each($("img"), function(i, item) {
           //Skip if image is already replaced
           if ($.inArray($(item).attr("src"), lstImgs) === -1) {
@@ -65,7 +65,7 @@ function main() {
         }
       },
       //Replace one image
-      handleImg: function(item, lstImgs) {
+      handleImg(item, lstImgs) {
         $(item).error(function() {
           //Handle broken imgs
           self.handleBrokenImg(item, lstImgs);
