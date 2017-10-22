@@ -16,21 +16,12 @@
         "description": "Text shown next to On/Off-button"
     },
     "optionsPageContextLink": {
-        "message": "Show \"Porgify Inactivate\" on right-click",
+        "message": "Show \"Porgify Options\" on right-click",
         "description": "Text shown next to On/Off-button"
     },
-    "optionsPageContextLinkActivate": {
-        "message": "Show \"Porgify Activate\" on right-click",
-        "description": "Text shown next to On/Off-button"
-    },
-
-    "contextMenuInactivate": {
-        "message": "Porgify Inactivate",
-        "description": "The option in context menu to inactivate the extension"
-    },
-    "contextMenuActivate": {
-        "message": "Porgify Activate",
-        "description": "The option in context menu to activate the extension"
+    "contextMenuOptions": {
+        "message": "Porgify Options",
+        "description": "The option in context menu to open the options"
     },
     "openOptionsInfo": {
         "message": "Open options again by using right-click or by clicking porgify 'Options' under ",

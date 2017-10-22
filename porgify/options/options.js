@@ -6,7 +6,7 @@
       document.title = chrome.i18n.getMessage("optionsHeader");
 
       //Lang
-      let langs = ["optionsPageActivate", "optionsPageContextLink", "optionsPageContextLinkActivate"];
+      let langs = ["optionsPageActivate", "optionsPageContextLink"];
       for (let i = 0; i < langs.length; i++) {
         let message = chrome.i18n.getMessage(langs[i]);
         document.getElementById(langs[i]).textContent = message;
@@ -16,7 +16,6 @@
       self.restoreOptions();
       document.getElementById("chkActivate").addEventListener("change", self.saveOptions);
       document.getElementById("chkUseContextMenu").addEventListener("change", self.saveOptions);
-      document.getElementById("chkUseContextMenuActivate").addEventListener("change", self.saveOptions);
 
       //Options info ([LINK] not in use)
       let optionsInfo = chrome.i18n.getMessage("openOptionsInfo").replace("[LINK]", "chrome://extensions/");
@@ -34,11 +33,9 @@
     saveOptions() {
       var activate = document.getElementById("chkActivate").checked;
       var contextmenu = document.getElementById("chkUseContextMenu").checked;
-      var contextmenuActivate = document.getElementById("chkUseContextMenuActivate").checked;
       var items = {
         activate,
         contextmenu,
-        contextmenuActivate
       };
       chrome.storage.sync.set(items, function() {
         self.setStatus(activate);
@@ -55,11 +52,9 @@
       chrome.storage.sync.get({
         activate: true,
         contextmenu: true,
-        contextmenuActivate: true
       }, function(items) {
         document.getElementById("chkActivate").checked = items.activate;
         document.getElementById("chkUseContextMenu").checked = items.contextmenu;
-        document.getElementById("chkUseContextMenuActivate").checked = items.contextmenuActivate;
         self.setStatus(items.activate);
       });
     },
