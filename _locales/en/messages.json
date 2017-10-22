@@ -4,7 +4,7 @@
         "description": "The title of the application, displayed in the web store."
     },
     "appDesc": {
-        "message": "Replaces all images on all pages to Porg.",
+        "message": "Replaces all images on all pages with images of Porg.",
         "description": "The description of the application, displayed in the web store."
     },
     "optionsHeader": {
