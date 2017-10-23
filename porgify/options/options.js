@@ -45,6 +45,7 @@
       //Notify bg.js
       chrome.runtime.sendMessage({
         type: "options",
+        items
       });
     },
     //Load from storage
