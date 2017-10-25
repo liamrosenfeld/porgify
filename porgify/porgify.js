@@ -30,6 +30,10 @@ function main() {
         "https://i.redd.it/benc3bhartaz.jpg",
         "https://i.imgur.com/MTUjrdX.jpg",
         "https://fsmedia.imgix.net/ce/78/f7/42/2c4f/442c/a8ce/2391c08f375c/threatofskywalkerpng.png?rect=9%2C25%2C1975%2C659&auto=format%2Ccompress&w=650",
+        "http://www.starwarsreport.com/wp-content/uploads/2017/08/20930930_10100926202255689_605769706_o-e1503589233510-809x1024.png",
+        "https://i.amz.mshcdn.com/YdhmJEcRrPEWSyFA_02erWPwahw=/fit-in/1200x9600/https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com%2Fuploads%2Fcard%2Fimage%2F617791%2F3983a983-bb0a-4ec2-bedc-f5d978a202f2.jpg",
+        "https://i.pinimg.com/originals/03/5c/62/035c622a970512a18bb99b250041aa43.jpg",
+        "https://static1.squarespace.com/static/51b3dc8ee4b051b96ceb10de/t/59de5d077131a57342840a74/1507745034779/heres-a-large-and-ridiculous-collection-of-porg-humor-that-has-flooded-the-internet27.jpg",
       ],
 
       //Handles all images on page with an interval of time
