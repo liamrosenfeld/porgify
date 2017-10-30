@@ -70,20 +70,6 @@
 
       document.getElementById("imgStatus").src = url;
     },
-    //Open extensions page (not working, not in use)
-    linkExtensions() {
-      chrome.runtime.sendMessage({
-        type: "extensions"
-      });
-    },
-    togglePrivacyTerms() {
-      var holder = document.getElementById("termsHolder");
-      if (holder.style.display === "none")
-        holder.style.display = "";
-      else
-        holder.style.display = "none";
-    },
-
   };
 
   document.addEventListener("DOMContentLoaded", self.init);
