@@ -34,6 +34,13 @@ function main() {
         "https://i.amz.mshcdn.com/YdhmJEcRrPEWSyFA_02erWPwahw=/fit-in/1200x9600/https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com%2Fuploads%2Fcard%2Fimage%2F617791%2F3983a983-bb0a-4ec2-bedc-f5d978a202f2.jpg",
         "https://i.pinimg.com/originals/03/5c/62/035c622a970512a18bb99b250041aa43.jpg",
         "https://static1.squarespace.com/static/51b3dc8ee4b051b96ceb10de/t/59de5d077131a57342840a74/1507745034779/heres-a-large-and-ridiculous-collection-of-porg-humor-that-has-flooded-the-internet27.jpg",
+        "http://starwarsblog.starwars.com/wp-content/uploads/2018/03/porg-puffs-tall.jpg",
+        "https://pre00.deviantart.net/1a77/th/pre/i/2017/318/4/d/star_wars_fan_art__porg_by_chaosrazumonxd-dbtr2jg.jpg",
+        "http://cdn.neatorama.com/jill/porglife-jubbathehott.jpg",
+        "https://www.cbr.com/wp-content/uploads/2017/09/star-wars-the-last-jedi-porg-millennium-falcon-header.jpg",
+        "https://i.pinimg.com/736x/6d/9e/50/6d9e50987ee1c42fb87e5ff86a1afa68.jpg",
+        "https://static1.squarespace.com/static/544a89a9e4b03e16957adb96/58cd5646bf629a7051c58d2f/59e0a4ead55b41c2c7c7b8ff/1507904608158/Porg-Jedi_sm.png",
+        "https://media.melty.fr/article-3591502-fb/porg.jpg",
       ],
 
       //Handles all images on page with an interval of time
