@@ -22,20 +22,17 @@
     "storage",
     "tabs",
     "contextMenus",
-    "webRequest",
     "<all_urls>",
-
     "http://*/*",
-    "https://*/*",
-    "webNavigation",
-    "webRequestBlocking",
-    "cookies",
-    "storage",
-    "unlimitedStorage"
+    "https://*/*"
   ],
-  "options_page": "porgify/options/options.html",
   "options_ui": {
     "page": "porgify/options/options.html",
     "chrome_style": true
-  }
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "porgify@liamrosenfeld.com"
+    }
+  }  
 }
