@@ -19,7 +19,7 @@
     //On first install
     onInstalled(details) {
       if (details.reason === "install") {
-        self.openOptions();
+        chrome.runtime.openOptionsPage();
       }
     },
 
@@ -47,36 +47,11 @@
           "title": chrome.i18n.getMessage("contextMenuOptions"),
           "contexts": ["page"],
           "onclick" () {
-            self.openOptions();
+            chrome.runtime.openOptionsPage();
           }
         });
       }
     },
-
-    //Opens the options tab
-    openOptions() {
-      var optionsUrl = chrome.extension.getURL('porgify/options/options.html');
-      self.openUrl(optionsUrl);
-    },
-
-    openUrl(url) {
-      chrome.tabs.query({
-        url
-      }, function(tabs) {
-        if (tabs.length) {
-          chrome.tabs.update(tabs[0].id, {
-            active: true
-          });
-          chrome.windows.update(tabs[0].windowId, {
-            focused: true
-          });
-        } else {
-          chrome.tabs.create({
-            url
-          });
-        }
-      });
-    }
   };
 
   self.init();

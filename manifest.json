@@ -19,7 +19,6 @@
     "16": "porgify/logo16.png"
   },
   "permissions": [
-    "tabs",
     "storage",
     "contextMenus",
     "http://*/*",
